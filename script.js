@@ -1,4 +1,4 @@
-Global variables
+// Global variables
 const titleContent = document.title;
 
 // Initialize on DOM load
@@ -219,8 +219,7 @@ function handleFileImport(event) {
           try {
             localStorage.setItem(
               key,
-              typeof value === "string" ? value.replace(/\n/g, "
-") : value
+              typeof value === "string" ? value.replace(/\\n/g, "\n") : value
             );
           } catch (error) {
             console.warn('LocalStorage not available for import');
